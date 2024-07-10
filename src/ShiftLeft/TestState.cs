@@ -1,6 +1,6 @@
-﻿namespace MSTest.ShiftLeft.Tests
+﻿namespace ShiftLeft
 {
-    internal enum TestState
+    public enum TestState
     {
         Success,
         Skipped,

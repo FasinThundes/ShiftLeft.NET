@@ -1,16 +1,17 @@
 ﻿using FluentAssertions;
-using Microsoft.VisualStudio.TestPlatform.Utilities;
+using NUnit.Framework;
+using System.Diagnostics;
 
-namespace ShiftLeft.MSTest.Tests
+namespace ShiftLeft.NUnit.Tests
 {
-    [TestClass]
+
     public class DotnetCliTests
     {
 
 // these test methods invoke dotnet CLI, which is not available in .Net Framework
 #if NETCOREAPP3_1_OR_GREATER
 
-        [TestMethod]
+        [Test]
         public async Task L0TestCanBeFilteredWithDotnetTestCli()
         {
             var output = await DotnetTestHelper.RunTestsByFilters(new Dictionary<string, string> { { Constants.Level, Constants.L0 } });
@@ -20,7 +21,7 @@ namespace ShiftLeft.MSTest.Tests
             testsRun.First().Should().Be(nameof(TestsWithAttributes.L0));
         }
 
-        [TestMethod]
+        [Test]
         public async Task L1TestCanBeFilteredWithDotnetTestCli()
         {
             var output = await DotnetTestHelper.RunTestsByFilters(new Dictionary<string, string> { { Constants.Level, Constants.L1 } });
@@ -30,7 +31,7 @@ namespace ShiftLeft.MSTest.Tests
             testsRun.First().Should().Be(nameof(TestsWithAttributes.L1));
         }
 
-        [TestMethod]
+        [Test]
         public async Task L2TestCanBeFilteredWithDotnetTestCli()
         {
             var output = await DotnetTestHelper.RunTestsByFilters(new Dictionary<string, string> { { Constants.Level, Constants.L2 } });
@@ -40,7 +41,7 @@ namespace ShiftLeft.MSTest.Tests
             testsRun.First().Should().Be(nameof(TestsWithAttributes.L2));
         }
 
-        [TestMethod]
+        [Test]
         public async Task L3TestCanBeFilteredWithDotnetTestCli()
         {
             var output = await DotnetTestHelper.RunTestsByFilters(new Dictionary<string, string> { { Constants.Level, Constants.L3 } });
@@ -50,7 +51,7 @@ namespace ShiftLeft.MSTest.Tests
             testsRun.First().Should().Be(nameof(TestsWithAttributes.L3));
         }
 
-        [TestMethod]
+        [Test]
         public async Task L4TestCanBeFilteredWithDotnetTestCli()
         {
             var output = await DotnetTestHelper.RunTestsByFilters(new Dictionary<string, string> { { Constants.Level, Constants.L4 } });

@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using System.Text;
 
-namespace MSTest.ShiftLeft.Tests
+namespace ShiftLeft.Tests
 {
     [TestClass]
     public class DotnetTestHelperTests

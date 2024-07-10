@@ -1,6 +1,6 @@
-﻿namespace MSTest.ShiftLeft.Tests
+﻿namespace ShiftLeft
 {
-    internal class DotnetTestResult
+    public class DotnetTestResult
     {
         public TestState State { get; }
         public string Name { get; }

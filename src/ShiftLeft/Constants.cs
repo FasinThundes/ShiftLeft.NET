@@ -1,4 +1,4 @@
-﻿namespace MSTest.ShiftLeft
+﻿namespace ShiftLeft
 {
     public static class Constants
     {

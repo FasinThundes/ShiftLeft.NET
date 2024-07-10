@@ -1,41 +1,42 @@
-﻿namespace ShiftLeft.MSTest.Tests
+﻿using NUnit.Framework;
+
+namespace ShiftLeft.NUnit.Tests
 {
     /// <summary>
     /// These tests are only used to test the attributes and dotnet CLI integration, they are not supposed to be run, so the are marked with [Ignore]
     /// </summary>
-    [TestClass]
     public class TestsWithAttributes
     {
-        [TestMethod]
+        [Test]
         [L0Test]
-        [Ignore]
+        [Ignore("Not supposed to run")]
         public void L0()
         {
 
         }
-        [TestMethod]
+        [Test]
         [L1Test]
-        [Ignore]
+        [Ignore("Not supposed to run")]
         public void L1()
         {
 
         }
-        [TestMethod]
+        [Test]
         [L2Test]
-        [Ignore]
+        [Ignore("Not supposed to run")]
         public void L2()
         {
         }
-        [TestMethod]
+        [Test]
         [L3Test]
-        [Ignore]
+        [Ignore("Not supposed to run")]
         public void L3()
         {
-            
+
         }
-        [TestMethod]
+        [Test]
         [L4Test]
-        [Ignore]
+        [Ignore("Not supposed to run")]
         public void L4()
         {
         }
