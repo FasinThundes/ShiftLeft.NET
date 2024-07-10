@@ -17,6 +17,8 @@
 	
 	<!-- The TFMs to build and test against. -->
 	<PropertyGroup>
+		<NetFrameworkMinimum>net462</NetFrameworkMinimum>
+		
 		<SupportedNetFrameworks>netcoreapp3.1;net6.0;net7.0;net8.0</SupportedNetFrameworks>
 		<MicrosoftTestingTargetFrameworks>net6.0;net7.0;net8.0</MicrosoftTestingTargetFrameworks>
 	</PropertyGroup>

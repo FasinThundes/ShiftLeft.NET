@@ -5,6 +5,10 @@ namespace MSTest.ShiftLeft.Tests
     [TestClass]
     public class DotnetCliTests
     {
+
+// these test methods invoke dotnet CLI, which is not available in .Net Framework
+#if NETCOREAPP3_1_OR_GREATER
+
         [TestMethod]
         public async Task L0TestCanBeFilteredWithDotnetTestCli()
         {
@@ -49,5 +53,6 @@ namespace MSTest.ShiftLeft.Tests
             testsRun.Should().HaveCount(1);
             testsRun.First().Should().Be(nameof(TestsWithAttributes.L4));
         }
+#endif
     }
 }
