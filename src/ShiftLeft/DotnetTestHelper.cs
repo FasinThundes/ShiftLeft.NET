@@ -12,7 +12,7 @@ namespace ShiftLeft
 
             return argument;
         }
-        public static async Task<string> RunTestsByFilters(IReadOnlyDictionary<string, string> filters)
+        public static async Task<string> RunTestsByFilters(IReadOnlyDictionary<string, string> filters, bool consoleLogger = true)
         {
             var info = new ProcessStartInfo("dotnet");
 
@@ -24,8 +24,12 @@ namespace ShiftLeft
 
             arguments.Add("--no-build");
             arguments.Add("--nologo");
-            arguments.Add("--logger");
-            arguments.Add("console;verbosity=normal");
+
+            if (consoleLogger)
+            {
+                arguments.Add("--logger");
+                arguments.Add("console;verbosity=normal");
+            }
 
             arguments.Add("--filter");
 
@@ -138,6 +142,10 @@ namespace ShiftLeft
                 {
                     continue;
                 }
+
+                // skip xunit lines
+                if (line.StartsWith("[xUnit.net"))
+                    continue;
 
                 // skip stack trace of failed tests (followed by an empty line)
                 if (isError)
