@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.MSTest", "src\ShiftLeft.MSTest\ShiftLeft.MSTest.csproj", "{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.MSTest", "ShiftLeft.MSTest\ShiftLeft.MSTest.csproj", "{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.MSTest.Tests", "src\ShiftLeft.MSTest.Tests\ShiftLeft.MSTest.Tests.csproj", "{D30C995F-0307-4134-8821-78AC4443948A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.MSTest.Tests", "ShiftLeft.MSTest.Tests\ShiftLeft.MSTest.Tests.csproj", "{D30C995F-0307-4134-8821-78AC4443948A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{C6D280F7-1887-4D3C-BCC9-45FEBDD325F4}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,13 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Pr
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.NUnit", "src\ShiftLeft.NUnit\ShiftLeft.NUnit.csproj", "{5235BCA7-54F3-4C41-9DDE-0DB4541867B1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.NUnit", "ShiftLeft.NUnit\ShiftLeft.NUnit.csproj", "{5235BCA7-54F3-4C41-9DDE-0DB4541867B1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft", "src\ShiftLeft\ShiftLeft.csproj", "{5634FFAF-15A8-42E4-A434-D6F94C8DF15B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft", "ShiftLeft\ShiftLeft.csproj", "{5634FFAF-15A8-42E4-A434-D6F94C8DF15B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.NUnit.Tests", "src\ShiftLeft.NUnit.Tests\ShiftLeft.NUnit.Tests.csproj", "{F310935D-B9F8-49F3-897A-7E39F03E28E0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.NUnit.Tests", "ShiftLeft.NUnit.Tests\ShiftLeft.NUnit.Tests.csproj", "{F310935D-B9F8-49F3-897A-7E39F03E28E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLeft.Tests", "src\ShiftLeft.Tests\ShiftLeft.Tests.csproj", "{307A5AEF-E8BD-48D2-86E3-FB3E77442123}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShiftLeft.Tests", "ShiftLeft.Tests\ShiftLeft.Tests.csproj", "{307A5AEF-E8BD-48D2-86E3-FB3E77442123}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
