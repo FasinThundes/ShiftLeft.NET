@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.MSTest", "src\ShiftLeft.MSTest\ShiftLeft.MSTest.csproj", "{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShiftLeft.MSTest.Tests", "src\ShiftLeft.MSTest.Tests\ShiftLeft.MSTest.Tests.csproj", "{D30C995F-0307-4134-8821-78AC4443948A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projektmappenelemente", "Projektmappenelemente", "{C6D280F7-1887-4D3C-BCC9-45FEBDD325F4}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FCFF0BB-EF5A-4B84-AC61-4978F4981955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D30C995F-0307-4134-8821-78AC4443948A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D30C995F-0307-4134-8821-78AC4443948A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D30C995F-0307-4134-8821-78AC4443948A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D30C995F-0307-4134-8821-78AC4443948A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF17470D-589B-4626-A9FC-F09B33EDB02B}
+	EndGlobalSection
+EndGlobal

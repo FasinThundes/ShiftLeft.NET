@@ -1,0 +1,23 @@
+<Project>
+	<PropertyGroup>
+		<Copyright>FasinThundes ©2024</Copyright>
+		<Authors>FasinThundes</Authors>
+		<Description>A .NET library which helps you organize your tests according to the Microsoft DevOps methodology for testing.</Description>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Nullable>enable</Nullable>
+		<LangVersion>10</LangVersion>
+	</PropertyGroup>
+	
+	<!-- disable the nullable warnings when compiling for .NET Standard 2.0 -->
+	<PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+		<NoWarn>$(NoWarn);nullable</NoWarn>
+	</PropertyGroup>
+	
+	<!-- The TFMs to build and test against. -->
+	<PropertyGroup>
+		<SupportedNetFrameworks>netcoreapp3.1;net6.0;net7.0;net8.0</SupportedNetFrameworks>
+		<MicrosoftTestingTargetFrameworks>net6.0;net7.0;net8.0</MicrosoftTestingTargetFrameworks>
+	</PropertyGroup>
+</Project>
