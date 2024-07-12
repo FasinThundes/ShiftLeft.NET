@@ -24,6 +24,8 @@ jobs:
       env:
         TAG: ${{ github.ref_name }}
       run: echo "VERSION=${TAG#v}" >> $GITHUB_ENV
+    - name: Navigate to srce/
+      run: cd src
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
