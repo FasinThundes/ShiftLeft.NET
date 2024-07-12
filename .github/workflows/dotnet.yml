@@ -23,6 +23,10 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
+    - name: Setup .NET Core 3.1	
+      uses: actions/setup-dotnet@v4	
+      with:	
+        dotnet-version: 3.1.x
     - name: Set VERSION Variable
       if: ${{ github.ref_type == 'tag' }}
       env:
