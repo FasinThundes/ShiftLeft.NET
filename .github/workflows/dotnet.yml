@@ -40,8 +40,14 @@ jobs:
     - name: Build Without Version
       if: ${{ env.VERSION == '' }}
       run: dotnet build --no-restore
-    - name: Test      
-      run: dotnet test --no-build --verbosity normal --filter FullyQualifiedName\!~ShiftLeft.XUnit.Tests
+    - name: Test ShiftLeft.Tests      
+      run: dotnet test ShiftLeft.Tests --no-build --verbosity normal
+    - name: Test ShiftLeft.MSTest.Tests      
+      run: dotnet test ShiftLeft.MSTest.Tests --no-build --verbosity normal
+    - name: Test ShiftLeft.NUnit.Tests      
+      run: dotnet test ShiftLeft.NUnit.Tests --no-build --verbosity normal
+    #- name: Test ShiftLeft.XUnit.Tests      
+    #  run: dotnet test ShiftLeft.XUnit.Tests --no-build --verbosity normal
     - name: Pack
       if: ${{ env.VERSION != '' }}
       run: dotnet pack --no-build -o nupkgs /p:PackageVersion=$VERSION
