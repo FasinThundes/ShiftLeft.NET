@@ -1,0 +1,73 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        working-directory: ./src
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Setup .NET Core 3.1	
+      uses: actions/setup-dotnet@v4	
+      with:	
+        dotnet-version: 3.1.x
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: 17
+        distribution: 'zulu' # Alternative distribution options are available.
+    - name: Cache SonarCloud packages
+      uses: actions/cache@v3
+      with:
+        path: ~\sonar\cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    - name: Cache SonarCloud scanner
+      id: cache-sonar-scanner
+      uses: actions/cache@v3
+      with:
+        path: .\.sonar\scanner
+        key: ${{ runner.os }}-sonar-scanner
+        restore-keys: ${{ runner.os }}-sonar-scanner
+    - name: Install SonarCloud scanner
+      if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+      shell: powershell
+      run: |
+        New-Item -Path .\.sonar\scanner -ItemType Directory
+        dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner    
+    - name: Build and analyze
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
+        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+      shell: powershell
+      run: |
+        .\.sonar\scanner\dotnet-sonarscanner begin /k:"FasinThundes_ShiftLeft.NET" /o:"fasinthundes" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths=./**/TestResults.xml  /d:sonar.cs.opencover.reportsPaths=./**/coverage.opencover.xml
+        dotnet build
+        dotnet test --logger "trx;LogFileName=TestResults.xml" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+    #- name: Restore dependencies
+    #  run: dotnet restore
+    #- name: Build
+    #  run: dotnet build --no-restore
+    #- name: Test ShiftLeft.Tests      
+    #  run: dotnet test ShiftLeft.Tests --no-build --verbosity normal
+    #- name: Test ShiftLeft.MSTest.Tests      
+    #  run: dotnet test ShiftLeft.MSTest.Tests --no-build --verbosity normal
+    #- name: Test ShiftLeft.NUnit.Tests      
+    #  run: dotnet test ShiftLeft.NUnit.Tests --no-build --verbosity normal
+    #- name: Test ShiftLeft.XUnit.Tests      
+    #  run: dotnet test ShiftLeft.XUnit.Tests --no-build --verbosity normal
