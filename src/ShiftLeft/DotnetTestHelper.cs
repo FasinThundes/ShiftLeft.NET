@@ -7,7 +7,7 @@ namespace ShiftLeft
     {
         private static string EscapeArgument(string argument)
         {
-            if (argument.Contains(" "))
+            if (argument.Contains(' '))
                 return $"\"{argument}\"";
 
             return argument;
@@ -161,7 +161,7 @@ namespace ShiftLeft
                     break;
 
                 line = line.Trim();
-                var startOfTestName = line.IndexOf(" ");
+                var startOfTestName = line.IndexOf(' ');
                 if (startOfTestName < 0)
                     throw new FormatException($"Failed to extract test name from line {lineIndex}");
 
@@ -169,8 +169,8 @@ namespace ShiftLeft
                 if (state == "Fehler")
                     isError = true;
 
-                var squareBracket = line.Substring(startOfTestName + 1).IndexOf("["); // successfull tests end with runtime in square brackets
-                var space = line.Substring(startOfTestName + 1).IndexOf(" "); // space before sqaure bracket (sometimes there, sometimes not?)
+                var squareBracket = line.Substring(startOfTestName + 1).IndexOf('['); // successfull tests end with runtime in square brackets
+                var space = line.Substring(startOfTestName + 1).IndexOf(' '); // space before sqaure bracket (sometimes there, sometimes not?)
 
                 // take space or sqaure bracket as delimiter, whichever comes first, otherwise take all of it
                 int endOfTestName;                    
