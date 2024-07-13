@@ -1,4 +1,5 @@
 ﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestPlatform.Utilities;
 using System.Text;
 
 namespace ShiftLeft.Tests
@@ -44,6 +45,22 @@ namespace ShiftLeft.Tests
             output.AppendLine(" Gesamtzeit: 0,6063 Sekunden");
 
            return output.ToString();
+        }
+
+        [TestMethod]
+        public async Task DotnetTest()
+        {
+            var output = await DotnetTestHelper.RunTestsByFilters(new Dictionary<string, string>() { { "Name", nameof(DotnetTestInternal) } });
+            var testNames = DotnetTestHelper.ExtractTestNames(output);
+            testNames.Should().Equal(new[]
+            {
+                nameof(DotnetTestInternal)
+            });
+        }
+        [TestMethod]
+        public async Task DotnetTestInternal()
+        {
+            
         }
 
         [TestMethod]
