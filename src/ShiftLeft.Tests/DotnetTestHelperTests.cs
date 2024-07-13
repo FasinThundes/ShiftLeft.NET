@@ -60,7 +60,8 @@ namespace ShiftLeft.Tests
         [TestMethod]
         public async Task DotnetTestInternal()
         {
-            
+            await Task.CompletedTask;
+            Assert.Inconclusive();
         }
 
         [TestMethod]
