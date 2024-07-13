@@ -57,7 +57,7 @@ jobs:
       run: |
         .\.sonar\scanner\dotnet-sonarscanner begin /k:"FasinThundes_ShiftLeft.NET" /o:"fasinthundes" /d:sonar.token="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths=./**/TestResults.xml  /d:sonar.cs.opencover.reportsPaths=./**/coverage.opencover.xml
         dotnet build
-        dotnet test --logger trx;LogFileName=TestResults.xml /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+        dotnet test --logger "trx;LogFileName=TestResults.xml" /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
         .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
     #- name: Restore dependencies
     #  run: dotnet restore
